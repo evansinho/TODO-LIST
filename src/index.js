@@ -1,11 +1,14 @@
 // eslint-disable-next-line max-classes-per-file
-class Project {
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+
+export class Project {
   constructor(name) {
     this.name = name;
   }
 }
 
-class Todo {
+export class Todo {
   constructor(title, description, dueDate, priority) {
     this.title = title;
     this.description = description;
@@ -14,3 +17,9 @@ class Todo {
     this.checkList = false;
   }
 }
+
+// const todoBtn = document.querySelector('#add-todo');
+
+// todoBtn.addEventListener('click', (e) => {
+//   e.preventDefault();
+// });

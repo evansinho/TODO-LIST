@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0"
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   }
 }
