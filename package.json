@@ -1,0 +1,31 @@
+{
+  "name": "TODO-LIST",
+  "version": "1.0.0",
+  "description": "A TO-DO list app built with javaScript.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evansinho/TODO-LIST.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evansinho/TODO-LIST/issues"
+  },
+  "homepage": "https://github.com/evansinho/TODO-LIST#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
