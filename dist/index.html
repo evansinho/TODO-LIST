@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&amp;family=Pacifico&amp;display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>TODO LIST</title>
 </head>
 <body>
@@ -11,10 +15,19 @@
   </header>
   <section class="container">
     <div class="left-ctn">
-      <h3>PROJECT</h3>
-      <div id="project"></div> 
+      <h3>PROJECTS</h3>
+      <span></span>
+      <div id="project"></div>
+      <span class="input">
+        <input class="project" type="text" placeholder="NEW PROJECT">
+        <i class="fa fa-plus-circle"></i>
+      </span>
     </div>
-    <div class="right-ctn" id="todos"></div>
+    <div class="right-ctn">
+      <h3>TODO LIST</h3>
+      <div id="todo-list"></div>
+      <button id="add-todo">ADD TASK</button>
+    </div>
   </section>
   <script src="main.js"></script>
 </body>
