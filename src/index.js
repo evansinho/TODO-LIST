@@ -2,25 +2,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 
-import { fetchLibrary, saveLibrary } from './fetchLibrary';
+// import Project from './models/project';
+import Todo from './models/todo';
 
 export const todoList = [];
-
-export class Project {
-  constructor(name) {
-    this.name = name;
-  }
-}
-
-export class Todo {
-  constructor(title, description, dueDate, priority) {
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
-    this.checkList = false;
-  }
-}
 
 export const render = () => {
   const todoCtn = document.querySelector('#todo-list'); // just appdend it
@@ -48,7 +33,7 @@ export const render = () => {
   });
 };
 
-export const addTodo = (todo) => {
+const addTodo = (todo) => {
   todoList.push(todo);
 };
 
@@ -64,7 +49,7 @@ const deleteTodo = (target) => {
 };
 
 document.querySelector('#form').addEventListener('submit', (e) => {
-  // e.preventDefault();
+  e.preventDefault();
   const title = document.querySelector('#todo-title').value;
   const desc = document.querySelector('#todo-desc').value;
   const date = document.querySelector('#todo-date').value;
@@ -72,9 +57,9 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   // instantiate the todo class
   const todo = new Todo(title, desc, date, priority);
   addTodo(todo);
-  clearFields();
   render();
-  $('#exampleModal').modal('toggle');
+  clearFields();
+  // $('#exampleModal').modal('toggle');
   // document.getElementById('#exampleModal').modal('hide');
 });
 
@@ -87,11 +72,3 @@ document.getElementById('todo-list').addEventListener('click', (e) => {
 });
 
 // document.querySelector('#edit').addEventListener('cick', () => {});
-
-const todo = new Todo('test1', 'desc', '2021-08-08', 'low');
-addTodo(todo);
-render();
-// window.addEventListener('load', renderInit);
-
-window.addEventListener('load', fetchLibrary);
-window.addEventListener('unload', saveLibrary);
