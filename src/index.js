@@ -12,7 +12,7 @@ export const render = () => {
   todoCtn.innerHTML = '';
   todoList.map((todo, index) => {
     const cardHtml = `
-    <div class="col mb-4" data-id=${index}>
+    <div class="col mb-4" id=todo_${index}>
       <div class="card border-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">Header</div>
         <div class="card-body text-primary">
@@ -45,10 +45,9 @@ const clearFields = () => {
 };
 
 const deleteTodo = (target) => {
-  console.log(target.dataset.id);
   const { id } = target.dataset;
   todoList.splice(id, 1);
-  target.parentElement.parentElement.parentElement.parentElement.remove();
+  document.getElementById(`todo_${id}`).remove();
 };
 
 document.querySelector('#form').addEventListener('submit', (e) => {
@@ -62,7 +61,6 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   addTodo(todo);
   render();
   clearFields();
-  // $('#exampleModal').modal('toggle' );
   document.getElementById('close').click();
 });
 
@@ -70,9 +68,6 @@ document.getElementById('todo-list').addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.id === 'delete') {
     deleteTodo(e.target);
-    console.log(e.target);
     render();
   }
 });
-
-// document.querySelector('#edit').addEventListener('cick', () => {});
