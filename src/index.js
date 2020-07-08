@@ -39,10 +39,17 @@ const addTodo = (todo) => {
   todoCtn.innerHTML += cardHtml;
 };
 
-const btn = document.querySelector('#submitBtn');
+const clearFields = () => {
+  document.querySelector('#todo-title').value = '';
+  document.querySelector('#todo-desc').value = '';
+  document.querySelector('#todo-date').value = '';
+  document.querySelector('#todo-priority').value = '';
+};
 
-btn.addEventListener('submit', (e) => {
-  // e.preventDefault();
+const form = document.querySelector('#form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
   const title = document.querySelector('#todo-title').value;
   const desc = document.querySelector('#todo-desc').value;
   const date = document.querySelector('#todo-date').value;
@@ -50,4 +57,5 @@ btn.addEventListener('submit', (e) => {
   // instantiate the todo class
   const todo = new Todo(title, desc, date, priority);
   addTodo(todo);
+  clearFields();
 });

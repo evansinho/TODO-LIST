@@ -38,7 +38,7 @@ hr {
   text-align: inherit;
 }
 
-.container {
+.container-section {
   display: flex;
   height: 100vh;
 }
