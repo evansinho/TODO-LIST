@@ -10,9 +10,9 @@ export const todoList = [];
 export const render = () => {
   const todoCtn = document.querySelector('#todo-list'); // just appdend it
   todoCtn.innerHTML = '';
-  todoList.map((todo) => {
+  todoList.map((todo, index) => {
     const cardHtml = `
-    <div class="col mb-4">
+    <div class="col mb-4" data-id=${index}>
       <div class="card border-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">Header</div>
         <div class="card-body text-primary">
@@ -23,7 +23,7 @@ export const render = () => {
         <div class="card-footer">
           <small class="text-muted">${todo.dueDate}</small>
           <i class="fa fa-edit ml-auto" id="edit"></i>
-          <a href=""><i class="fa fa-trash ml-auto" id="delete"></i></a>
+          <a href=""><i class="fa fa-trash ml-auto" data-id=${index} id="delete"></i></a>
         </div>
       </div>
     </div>
@@ -45,6 +45,9 @@ const clearFields = () => {
 };
 
 const deleteTodo = (target) => {
+  console.log(target.dataset.id);
+  const { id } = target.dataset;
+  todoList.splice(id, 1);
   target.parentElement.parentElement.parentElement.parentElement.remove();
 };
 
@@ -59,14 +62,15 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   addTodo(todo);
   render();
   clearFields();
-  // $('#exampleModal').modal('toggle');
-  // document.getElementById('#exampleModal').modal('hide');
+  // $('#exampleModal').modal('toggle' );
+  document.getElementById('close').click();
 });
 
 document.getElementById('todo-list').addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.id === 'delete') {
     deleteTodo(e.target);
+    console.log(e.target);
     render();
   }
 });
