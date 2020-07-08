@@ -57,11 +57,25 @@
                     <label for="todo-desc" class="col-form-label">Description:</label>
                     <textarea class="form-control" id="todo-desc"></textarea>
                   </div>
+                  <div class="form-group">
+                    <label for="todo-date" class="col-form-label">Due date:</label>
+                    <input type="date" class="form-control" id="todo-date">
+                  </div>
+                  <div class="form-group">
+                    <label for="todo-priority" class="">Priority:</label>
+                    <!-- <textarea class="form-control" id="todo-desc"></textarea> -->
+                    <select class="custom-select" id="todo-priority">
+                      <option selected>Choose Priority</option>
+                      <option value="1">High</option>
+                      <option value="2">Medium</option>
+                      <option value="3">Low</option>
+                    </select>
+                  </div>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
