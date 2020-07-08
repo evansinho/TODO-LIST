@@ -48,14 +48,14 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form id="form">
                   <div class="form-group">
                     <label for="todo-title" class="col-form-label">Task:</label>
-                    <input type="text" class="form-control" id="todo-title">
+                    <input type="text" class="form-control" id="todo-title" required>
                   </div>
                   <div class="form-group">
                     <label for="todo-desc" class="col-form-label">Description:</label>
-                    <textarea class="form-control" id="todo-desc"></textarea>
+                    <textarea class="form-control" id="todo-desc" required></textarea>
                   </div>
                   <div class="form-group">
                     <label for="todo-date" class="col-form-label">Due date:</label>
@@ -66,99 +66,26 @@
                     <!-- <textarea class="form-control" id="todo-desc"></textarea> -->
                     <select class="custom-select" id="todo-priority">
                       <option selected>Choose Priority</option>
-                      <option value="1">High</option>
-                      <option value="2">Medium</option>
-                      <option value="3">Low</option>
+                      <option value="High">High</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Low">Low</option>
                     </select>
                   </div>
-                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Save changes</button>
               </div>
+            </form>
             </div>
           </div>
         </div>
       </div>
 
 
-      <div id="todo-list container">
-        <div class="row row-cols-1 row-cols-md-3">
-          <div class="col mb-4">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <span class="badge badge-pill badge-warning">High Priority</span>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Due date: 1 day to go</small>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col mb-4">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Due date: 1 day to go</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Due date: 1 day to go</small>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col mb-4">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Due date: 1 day to go</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Header</div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Due date: 1 day to go</small>
-              </div>
-            </div>
-          </div>
-
-
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3" id="todo-list">
+          
         </div>
       </div>
     </div>
