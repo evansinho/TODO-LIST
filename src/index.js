@@ -20,7 +20,6 @@ export class Todo {
 
 const addTodo = (todo) => {
   const todoCtn = document.querySelector('#todo-list');
-
   const cardHtml = `
     <div class="col mb-4">
       <div class="card border-primary mb-3" style="max-width: 18rem;">
@@ -32,6 +31,8 @@ const addTodo = (todo) => {
         </div>
         <div class="card-footer">
           <small class="text-muted">${todo.dueDate}</small>
+          <i class="fa fa-edit ml-auto" id="edit"></i>
+          <i class="fa fa-trash ml-auto" id="delete"></i>
         </div>
       </div>
     </div>
@@ -46,9 +47,13 @@ const clearFields = () => {
   document.querySelector('#todo-priority').value = '';
 };
 
-const form = document.querySelector('#form');
+const deleteTodo = (target) => {
+  if (target.className === 'delete') {
+    target.parentElement.parentElement.remove();
+  }
+};
 
-form.addEventListener('submit', (e) => {
+document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.querySelector('#todo-title').value;
   const desc = document.querySelector('#todo-desc').value;
@@ -59,3 +64,10 @@ form.addEventListener('submit', (e) => {
   addTodo(todo);
   clearFields();
 });
+
+document.getElementById('delete').addEventListener('cick', (e) => {
+  deleteTodo(e.target);
+  e.preventDefault();
+});
+
+// document.querySelector('#edit').addEventListener('cick', () => {});
