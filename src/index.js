@@ -70,8 +70,11 @@ document.getElementById('add-project').addEventListener('click', (e) => {
   const projectName = document.getElementById('project-name').value;
   document.getElementById('project-name').value = '';
   addProject(projectName);
-
   render();
 });
 
 showProjects();
+
+document.getElementById('open-modal').addEventListener('click', (e) => {
+  document.getElementById('todo-date').valueAsDate = new Date();
+});
