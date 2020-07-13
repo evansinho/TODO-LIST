@@ -51,7 +51,7 @@ hr {
   padding: 20px 0 0 20px;
 }
 
-.left-ctn input {
+/* .left-ctn input {
   height: 30px;
   width: 140px;
   border: 0;
@@ -60,6 +60,14 @@ hr {
   background: inherit;
   outline: none;
   margin-bottom: 15px;
+} */
+
+.add-project {
+  position: relative;
+display: block;
+padding: .75rem 1.25rem;
+background-color: #fff;
+border: 1px solid rgba(0,0,0,.125);
 }
 
 .left-ctn h3,

@@ -18,12 +18,16 @@
   <section class="container-section">
     <div class="left-ctn">
       <h3>PROJECTS</h3>
-      <span></span>
-      <div id="project"></div>
-      <span class="input">
-        <input class="project" type="text" placeholder="NEW PROJECT">
-        <i class="fa fa-plus-circle"></i>
-      </span>
+
+      <div class="d-flex add-project">
+        <input class="project" id="project-name" type="text" placeholder="NEW PROJECT">
+        <i id="add-project" class="fa fa-plus-circle  m-1"></i>
+      </div>
+
+      <ul id="project-list" class="list-group">
+
+      </ul>
+
     </div>
     <div class="right-ctn">
       <h3>TODO LIST</h3>
