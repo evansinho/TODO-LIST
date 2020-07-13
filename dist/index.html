@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&amp;family=Pacifico&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>TODO LIST</title>
+</head>
+
+<body>
+  <header>
+    <h2 class="text-center pt-2">TODO-APP</h2>
+  </header>
+  <section class="container-section">
+    <div class="left-ctn">
+      <h3>PROJECTS</h3>
+
+      <div class="d-flex add-project">
+        <input class="project" id="project-name" type="text" placeholder="NEW PROJECT">
+        <i id="add-project" class="fa fa-plus-circle  m-1"></i>
+      </div>
+
+      <ul id="project-list" class="list-group">
+
+      </ul>
+
+    </div>
+    <div class="right-ctn">
+      <h3>TODO LIST</h3>
+
+      <!-- <button id="add-todo">ADD TASK</button> -->
+
+      <div class="add-todo py-3">
+        <!-- Button trigger modal -->
+        <button type="button" id="open-modal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Add Task
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal-label">Add New Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="form">
+                  <div class="form-group">
+                    <label for="todo-title" class="col-form-label">Task:</label>
+                    <input type="text" class="form-control" id="todo-title" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="todo-desc" class="col-form-label">Description:</label>
+                    <textarea class="form-control" id="todo-desc" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="todo-date" class="col-form-label">Due date:</label>
+                    <input type="date" class="form-control" id="todo-date" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="todo-priority" class="">Priority:</label>
+                    <!-- <textarea class="form-control" id="todo-desc"></textarea> -->
+                    <select class="custom-select" id="todo-priority" required>
+
+                      <option value="High" selected>High</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Low">Low</option>
+                    </select>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <div class="row row-cols-1 row-cols-md-3" id="todo-list">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+
+</html>

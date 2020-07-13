@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202020;
+}
+
+a {
+  text-decoration: none;
+  /* text-transform: uppercase; */
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  background-color: rgb(55, 161, 180);
+}
+
+header h2 {
+  color: #fff;
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+}
+
+hr {
+  width: 10px;
+  text-align: inherit;
+}
+
+.container-section {
+  display: flex;
+  height: 100vh;
+}
+
+.left-ctn {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  width: 350px;
+  padding: 20px 0 0 20px;
+}
+
+.add-project {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.left-ctn h3,
+.right-ctn h3 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.left-ctn i {
+  color: rgb(55, 161, 180);
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.right-ctn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+
+#add-todo {
+  height: 30px;
+  width: 140px;
+  border-radius: 6px;
+  background-color: rgb(55, 161, 180);
+  color: #fff;
+  border-style: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin: 30px;
+}
+
+span {
+  height: 20px;
+  color: red;
+}
