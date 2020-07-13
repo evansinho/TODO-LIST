@@ -75,6 +75,6 @@ document.getElementById('add-project').addEventListener('click', (e) => {
 
 showProjects();
 
-document.getElementById('open-modal').addEventListener('click', (e) => {
+document.getElementById('open-modal').addEventListener('click', () => {
   document.getElementById('todo-date').valueAsDate = new Date();
 });
