@@ -1,46 +1,12 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable import/no-cycle */
-// eslint-disable-next-line max-classes-per-file
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-unused-vars */
-/* eslint-disable guard-for-in */
 /* eslint-disable import/no-mutable-exports */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import {
-  currentList, currentListName, showProjects, addProject, changeProject,
+  currentList, showProjects, addProject, changeProject,
 } from './project';
-
 import {
-  addTodo, updateTodo, deleteTodo, Todo,
+  addTodo, updateTodo, deleteTodo, render, Todo,
 } from './todo';
-
-export const render = () => {
-  const todoCtn = document.querySelector('#todo-list');
-  todoCtn.innerHTML = '';
-  currentList.map((todo, index) => {
-    const cardHtml = `
-    <div class="col mb-4" id=todo_${index}>
-      <div class="card border-primary mb-3" style="max-width: 18rem;">
-        <div class="card-header">${currentListName}</div>
-        <div class="card-body text-primary">
-          <h5 class="card-title">${todo.title}</h5>
-          <p class="card-text">${todo.description}</p>
-          <span class="badge badge-pill badge-warning">${todo.priority}</span>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">${todo.dueDate}</small>
-          <a href=""><i class="fa fa-edit ml-auto" data-id=${index} id="edit"></i></a>
-          <a href=""><i class="fa fa-trash ml-auto" data-id=${index} id="delete"></i></a>
-        </div>
-      </div>
-    </div>
-  `;
-    todoCtn.innerHTML += cardHtml;
-    return null;
-  });
-  showProjects();
-};
 
 const clearFields = () => {
   document.querySelector('#todo-title').value = '';
@@ -59,7 +25,6 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   const todo = new Todo(title, desc, date, priority);
   if (type === 'Edit Task') {
     // edit the todo class
-
     const id = document.getElementById('modal-label').getAttribute('data-id');
     updateTodo(todo, id);
     document.getElementById('modal-label').innerHTML = 'Add New Task';
@@ -96,7 +61,6 @@ document.getElementById('todo-list').addEventListener('click', (e) => {
 
 document.querySelector('#project-list').addEventListener('click', (e) => {
   e.preventDefault();
-  // console.log(e.target.dataset.list);
   changeProject(e.target.dataset.list);
 });
 

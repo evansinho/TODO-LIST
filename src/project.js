@@ -2,7 +2,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable guard-for-in */
 /* eslint-disable import/no-mutable-exports */
-import { render } from './index';
+// eslint-disable-next-line import/no-cycle
+import { render } from './todo';
 
 const projects = {};
 projects.default = [];
@@ -22,12 +23,9 @@ export const changeProject = (name) => {
 };
 
 export const showProjects = () => {
-  // console.log(projects);
   const projectListUl = document.getElementById('project-list');
   projectListUl.innerHTML = '';
   for (const key in projects) {
-    // console.log(`curr : ${currentListName} + k :${key}`);
-
     if (key === currentListName) {
       projectListUl.innerHTML += `<li class="list-group-item active" data-list="${key}"> ${key}</li>`;
     } else { projectListUl.innerHTML += `<a href=""><li class="list-group-item" data-list="${key}"> ${key}</li></a>`; }
