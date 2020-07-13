@@ -31,10 +31,10 @@ const showProjects = () => {
   const projectListUl = document.getElementById('project-list');
   projectListUl.innerHTML = '';
   for (const key in projects) {
-    console.log(`curr : ${currentListName} + k :${key}`);
+    // console.log(`curr : ${currentListName} + k :${key}`);
 
     if (key === currentListName) {
-      projectListUl.innerHTML += `<a><li class="list-group-item active" data-list="${key}"> ${key}</li></a>`;
+      projectListUl.innerHTML += `<li class="list-group-item active" data-list="${key}"> ${key}</li>`;
     } else { projectListUl.innerHTML += `<a href=""><li class="list-group-item" data-list="${key}"> ${key}</li></a>`; }
   }
 };
@@ -107,7 +107,7 @@ document.getElementById('todo-list').addEventListener('click', (e) => {
 
 document.querySelector('#project-list').addEventListener('click', (e) => {
   e.preventDefault();
-  console.log(e.target.dataset.list);
+  // console.log(e.target.dataset.list);
   changeProject(e.target.dataset.list);
 });
 
