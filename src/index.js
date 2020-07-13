@@ -9,21 +9,33 @@ import 'bootstrap';
 // import Project from './models/project';
 import Todo from './models/todo';
 
-export let currentList = [];
 const projects = {};
 projects.default = [];
+let currentList = projects.default;
+let currentListName = 'default';
 
 export const addProject = (name) => {
   projects[name] = [];
   currentList = projects[name];
+  currentListName = name;
+};
+
+export const changeProject = (name) => {
+  currentList = projects[name];
+  currentListName = name;
+  render();
 };
 
 const showProjects = () => {
-  console.log(projects);
+  // console.log(projects);
   const projectListUl = document.getElementById('project-list');
   projectListUl.innerHTML = '';
   for (const key in projects) {
-    projectListUl.innerHTML += `<li class="list-group-item" > ${key}</li>`;
+    console.log(`curr : ${currentListName} + k :${key}`);
+
+    if (key === currentListName) {
+      projectListUl.innerHTML += `<a><li class="list-group-item active" data-list="${key}"> ${key}</li></a>`;
+    } else { projectListUl.innerHTML += `<a href=""><li class="list-group-item" data-list="${key}"> ${key}</li></a>`; }
   }
 };
 
@@ -34,7 +46,7 @@ export const render = () => {
     const cardHtml = `
     <div class="col mb-4" id=todo_${index}>
       <div class="card border-primary mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
+        <div class="card-header">${currentListName}</div>
         <div class="card-body text-primary">
           <h5 class="card-title">${todo.title}</h5>
           <p class="card-text">${todo.description}</p>
@@ -51,6 +63,7 @@ export const render = () => {
     todoCtn.innerHTML += cardHtml;
     return null;
   });
+  showProjects();
 };
 
 const addTodo = (todo) => {
@@ -92,13 +105,18 @@ document.getElementById('todo-list').addEventListener('click', (e) => {
   }
 });
 
+document.querySelector('#project-list').addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(e.target.dataset.list);
+  changeProject(e.target.dataset.list);
+});
+
 document.getElementById('add-project').addEventListener('click', (e) => {
   e.preventDefault();
-  showProjects();
   const projectName = document.getElementById('project-name').value;
   document.getElementById('project-name').value = '';
   addProject(projectName);
-  console.log(`clist+ ${projects}`);
+
   render();
 });
 
