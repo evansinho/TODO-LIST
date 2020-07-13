@@ -51,23 +51,12 @@ hr {
   padding: 20px 0 0 20px;
 }
 
-/* .left-ctn input {
-  height: 30px;
-  width: 140px;
-  border: 0;
-  padding: 0px 5px 10px 0;
-  font-size: 18px;
-  background: inherit;
-  outline: none;
-  margin-bottom: 15px;
-} */
-
 .add-project {
   position: relative;
-display: block;
-padding: .75rem 1.25rem;
-background-color: #fff;
-border: 1px solid rgba(0,0,0,.125);
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .left-ctn h3,
