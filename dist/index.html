@@ -36,7 +36,7 @@
 
       <div class="add-todo py-3">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" id="open-modal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Add Task
         </button>
 
@@ -46,7 +46,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+                <h5 class="modal-title" id="modal-label">Add New Task</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -69,7 +69,7 @@
                     <label for="todo-priority" class="">Priority:</label>
                     <!-- <textarea class="form-control" id="todo-desc"></textarea> -->
                     <select class="custom-select" id="todo-priority">
-                      <option selected>Choose Priority</option>
+
                       <option value="High">High</option>
                       <option value="Medium">Medium</option>
                       <option value="Low">Low</option>
